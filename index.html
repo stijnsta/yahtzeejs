@@ -1,5 +1,7 @@
 <html>
     <head>
+        <script src="y.js">         
+        </script>
     </head>
     <body>
         <div>
@@ -10,14 +12,14 @@
                     <td>
                         <div>
                             <span>1</span>
-                            <button id="btn1">0</button>
+                            <button id="btn1" data-saved="0" data-point="1" onclick="save(this)">0</button>
                         </div>
                     </td>
                     <td>
 
                         <div>
                             <span>3ofakind</span>
-                            <button id="btn3kind">0</button>
+                            <button id="btn3kind" data-saved="0" data-point="1" onclick="save(this)">0</button>
                         </div>
                     </td>
                 </tr>
@@ -26,14 +28,14 @@
 
                         <div>
                             <span>2</span>
-                            <button id="btn2">0</button>
+                            <button id="btn2" data-saved="0" data-point="1" onclick="save(this)">0</button>
                         </div>
                     </td>
                     <td>
 
                         <div>
                             <span>4ofakind</span>
-                            <button id="btn4kind">0</button>
+                            <button id="btn4kind" data-saved="0" data-point="1" onclick="save(this)">0</button>
                         </div>
                     </td>
                 </tr>
@@ -42,13 +44,13 @@
 
                         <div>
                             <span>3</span>
-                            <button id="btn3">0</button>
+                            <button id="btn3" data-saved="0" data-point="1" onclick="save(this)">0</button>
                         </div>
                     </td>
                     <td>
                         <div>
                             <span>fullhouse</span>
-                            <button id="btnfh">0</button>
+                            <button id="btnfh" data-saved="0" data-point="1" onclick="save(this)">0</button>
 
                         </div>
                     </td>
@@ -58,13 +60,13 @@
 
                         <div>
                             <span>4</span>
-                            <button id="btn4">0</button>
+                            <button id="btn4" data-saved="0" data-point="1" onclick="save(this)">0</button>
                         </div>
                     </td>
                     <td>
                         <div>
                             <span>kleinestraat</span>
-                            <button id="btnss">0</button>
+                            <button id="btnss" data-saved="0" data-point="1" onclick="save(this)">0</button>
                         </div>
                     </td>
                 </tr>
@@ -73,13 +75,13 @@
 
                         <div>
                             <span>5</span>
-                            <button id="btn5">0</button>
+                            <button id="btn5" data-saved="0" data-point="1" onclick="save(this)">0</button>
                         </div>
                     </td>
                     <td>
                         <div>
                             <span>grotestraat</span>
-                            <button id="btnbs">0</button>
+                            <button id="btnbs" data-saved="0" data-point="1" onclick="save(this)">0</button>
                         </div>
                     </td>
                 </tr>
@@ -87,14 +89,14 @@
                     <td>
                         <div>
                             <span>6</span>
-                            <button id="btn6">0</button>
+                            <button id="btn6" data-saved="0" data-point="1" onclick="save(this)">0</button>
                         </div>
 
                     </td>
                     <td>
                         <div>
                             <span>yahtzee</span>
-                            <button id="btny">0</button>
+                            <button id="btny" data-saved="0" data-point="1" onclick="save(this)">0</button>
                         </div>
                     </td>
                 </tr>
@@ -109,7 +111,7 @@
                     <td>
                         <div>
                             <span>chance</span>
-                            <button id="btnc">0</button>
+                            <button id="btnc" data-saved="0" data-point="1" onclick="save(this)">0</button>
                         </div>
                     </td>
                 </tr>
@@ -117,7 +119,7 @@
                     <td>
                         <div>
                             <span>totaal</span>
-                            <span id="lbltotalu"></span>
+                            <span id="lbltotalu" ></span>
                         </div>
                     </td>
                     <td>
@@ -129,6 +131,20 @@
                 </tr>
             </table>
        </div>
+       <div>
+        <ul>
+            <li id="dice1">0</li>
+            <li id="dice2">0</li>
+            <li id="dice3">0</li>
+            <li id="dice4">0</li>
+            <li id="dice5">0</li>
+        </ul>
 
+       </div>
+       <div>
+        <span id="turns">3</span>
+        <button id="roll" onclick="roll()">Rollen</button>
+     
+       </div>
     </body>
 </html>
