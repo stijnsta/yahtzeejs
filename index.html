@@ -1,150 +1,208 @@
 <html>
-    <head>
-        <script src="y.js">         
-        </script>
-    </head>
-    <body>
-        <div>
-            <div>Score</div>
-            <div><span id="lblpoints">0</span> punten</div>
-            <table>
-                <tr>
-                    <td>
-                        <div>
-                            <span>1</span>
-                            <button id="btn1" data-saved="0" data-point="1" onclick="save(this)">0</button>
-                        </div>
-                    </td>
-                    <td>
 
-                        <div>
-                            <span>3ofakind</span>
-                            <button id="btn3kind" data-saved="0" data-point="1" onclick="save(this)">0</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
+<head>
+    <script src="y.js"></script>
+    <link rel="stylesheet" href="y.css" />
+</head>
 
-                        <div>
-                            <span>2</span>
-                            <button id="btn2" data-saved="0" data-point="1" onclick="save(this)">0</button>
-                        </div>
-                    </td>
-                    <td>
+<body>
+    <div>
+        <div>Score</div>
+        <div><span id="lblpoints" class="total overall">0</span> punten</div>
+        <table>
 
-                        <div>
-                            <span>4ofakind</span>
-                            <button id="btn4kind" data-saved="0" data-point="1" onclick="save(this)">0</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
+            <tr>
+                <th colspan="2">Boven</th>
+                <th colspan="2">Onder</th>
+            </tr>
 
-                        <div>
-                            <span>3</span>
-                            <button id="btn3" data-saved="0" data-point="1" onclick="save(this)">0</button>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <span>fullhouse</span>
-                            <button id="btnfh" data-saved="0" data-point="1" onclick="save(this)">0</button>
+            <tr>
+                <td>
+                    <span>1</span>
+                </td>
+                <td>
+                    <button class="btn points" data-top="1" id="btn1" data-saved="0" data-point="1"
+                        onclick="save(this)">0</button>
+                </td>
+                <td>
 
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
 
-                        <div>
-                            <span>4</span>
-                            <button id="btn4" data-saved="0" data-point="1" onclick="save(this)">0</button>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <span>kleinestraat</span>
-                            <button id="btnss" data-saved="0" data-point="1" onclick="save(this)">0</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
+                    <span>3ofakind</span>
+                </td>
+                <td>
+                    <button class="btn points" data-top="0" id="btn3kind" data-saved="0" data-point="1"
+                        onclick="save(this)">0</button>
+                </td>
 
-                        <div>
-                            <span>5</span>
-                            <button id="btn5" data-saved="0" data-point="1" onclick="save(this)">0</button>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <span>grotestraat</span>
-                            <button id="btnbs" data-saved="0" data-point="1" onclick="save(this)">0</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div>
-                            <span>6</span>
-                            <button id="btn6" data-saved="0" data-point="1" onclick="save(this)">0</button>
-                        </div>
+            </tr>
+            <tr>
+                <td>
 
-                    </td>
-                    <td>
-                        <div>
-                            <span>yahtzee</span>
-                            <button id="btny" data-saved="0" data-point="1" onclick="save(this)">0</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div>
-                            <span>bonus</span>
-                            <span id="lblbonus"></span>
-                        </div>
 
-                    </td>
-                    <td>
-                        <div>
-                            <span>chance</span>
-                            <button id="btnc" data-saved="0" data-point="1" onclick="save(this)">0</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div>
-                            <span>totaal</span>
-                            <span id="lbltotalu" ></span>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <span>totaal</span>
-                            <span id="lbltotall"></span>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-       </div>
-       <div>
+                    <span>2</span>
+                </td>
+                <td>
+
+                    <button class="btn points" data-top="1" id="btn2" data-saved="0" data-point="1"
+                        onclick="save(this)">0</button>
+                </td>
+
+
+                <td>
+
+
+                    <span>4ofakind</span>
+                </td>
+                <td>
+
+                    <button class="btn points" data-top="0" id="btn4kind" data-saved="0" data-point="1"
+                        onclick="save(this)">0</button>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+
+                   
+                        <span>3</span>
+
+                        </td>
+                        <td>
+                        <button class="btn points" data-top="1" id="btn3" data-saved="0" data-point="1"
+                            onclick="save(this)">0</button>
+                 
+                </td>
+                <td>
+                   
+                        <span>fullhouse</span>
+                        </td>
+                        <td>
+                        <button class="btn points" data-top="0" id="btnfh" data-saved="0" data-point="1"
+                            onclick="save(this)">0</button>
+
+                
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                 
+                        <span>4</span>
+                        </td>
+                        <td>
+                        <button class="btn points" data-top="1" id="btn4" data-saved="0" data-point="1"
+                            onclick="save(this)">0</button>
+                 
+                </td>
+                <td>
+                
+                        <span>kleinestraat</span>
+                        </td>
+                        <td>
+                        <button class="btn points" data-top="0" id="btnss" data-saved="0" data-point="1"
+                            onclick="save(this)">0</button>
+                 
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                
+                        <span>5</span>
+                        </td>
+                        <td>
+                        <button class="btn points" data-top="1" id="btn5" data-saved="0" data-point="1"
+                            onclick="save(this)">0</button>
+                
+                </td>
+                <td>
+                
+                        <span>grotestraat</span>
+
+                        </td>
+                        <td>
+                        <button class="btn points" data-top="0" id="btnbs" data-saved="0" data-point="1"
+                            onclick="save(this)">0</button>
+                 
+                </td>
+            </tr>
+            <tr>
+                <td>
+             
+                        <span>6</span>
+                        </td>
+                        <td>
+                        <button class="btn points" data-top="1" id="btn6" data-saved="0" data-point="1"
+                            onclick="save(this)">0</button>
+                 
+
+                </td>
+                <td>
+               
+                        <span>yahtzee</span>
+                        </td>
+                        <td>
+                        <button class="btn points yahtzee" data-top="0" id="btny" data-saved="0" data-point="1"
+                            onclick="save(this)">0</button>
+                        <span class="extra hidden"></span>
+                        <input type="hidden" id="extra" value="0">
+               
+                </td>
+            </tr>
+            <tr>
+                <td>
+               
+                        <span>bonus</span>
+                        </td><td>
+                        <span class="total bonus" id="lblbonus">0</span>
+                
+
+                </td>
+                <td>
+               
+                        <span>chance</span>
+                        </td>
+                        <td>
+                        <button class="btn points" id="btnc" data-saved="0" data-point="1"
+                            onclick="save(this)">0</button>
+                
+                </td>
+            </tr>
+            <tr>
+                <td>
+                
+                        <span>totaal</span>
+                        </td>
+                        <td>
+                        <span class="total top" id="lbltotalu">0</span>
+                 
+                </td>
+           
+                <td>
+                        <span>totaal</span>
+                        </td>
+                        <td>
+                        <span class="total bottom" id="lbltotall">0</span>
+                  
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
         <ul>
-            <li id="dice1">0</li>
-            <li id="dice2">0</li>
-            <li id="dice3">0</li>
-            <li id="dice4">0</li>
-            <li id="dice5">0</li>
+            <li class="dice" data-keep="0" id="dice1" onclick="keepdice(this)">0</li>
+            <li class="dice" data-keep="0" id="dice2" onclick="keepdice(this)">0</li>
+            <li class="dice" data-keep="0" id="dice3" onclick="keepdice(this)">0</li>
+            <li class="dice" data-keep="0" id="dice4" onclick="keepdice(this)">0</li>
+            <li class="dice" data-keep="0" id="dice5" onclick="keepdice(this)">0</li>
         </ul>
 
-       </div>
-       <div>
-        <span id="turns">3</span>
-        <button id="roll" onclick="roll()">Rollen</button>
-     
-       </div>
-    </body>
+    </div>
+    <div>
+        <span class="turnsleft" id="turns">3</span>
+        <button id="roll" onclick="roll()" class="btn roll">Rollen</button>
+        <button id="restart" onclick="restart()" class="btn restart">Herstarten</button>
+    </div>
+</body>
+
 </html>

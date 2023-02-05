@@ -1,7 +1,43 @@
+var dices = [0, 0, 0, 0, 0];
 function save(item) {
     item.disabled = 1;
     item.dataset.saved = 1;
     resetRoll();
+    calculateTotals();
+}
+function restart() {
+    document.querySelectorAll('[data-point="1"]').forEach(function (item) {
+
+        item.dataset.saved = "0";
+        item.disabled = false;
+    });
+    document.getElementById("extra").value = 0;
+    document.getElementById("lblbonus").innerText = 0;
+    document.getElementById("lbltotalu").innerText = 0;
+    document.getElementById("lbltotall").innerText = 0;
+    document.getElementById("lblpoints").innerText = 0;
+    resetRoll();
+
+}
+function calculateTotals() {
+    var topSubTotal = 0;
+    var bottomTotal = 0;
+    document.querySelectorAll('[data-top="1"]').forEach(function (top) {
+        topSubTotal += parseInt(top.innerText);
+    });
+
+    if (topSubTotal >= 63) {
+        document.getElementById('lblbonus').innerText = "35";
+        topSubTotal += 35;
+    }
+    document.getElementById('lbltotalu').innerText = topSubTotal;
+
+    document.querySelectorAll('[data-top="0"]').forEach(function (bottom) {
+        bottomTotal += parseInt(bottom.innerText);
+    });
+    bottomTotal += parseInt(document.getElementById("extra").value);
+    document.getElementById("lbltotall").innerText = bottomTotal;
+    document.getElementById("lblpoints").innerText = bottomTotal + topSubTotal;
 }
 function resetRoll() {
     document.getElementById("turns").innerText = 3;
@@ -10,8 +46,20 @@ function resetRoll() {
     document.getElementById("dice3").innerText = 0;
     document.getElementById("dice4").innerText = 0;
     document.getElementById("dice5").innerText = 0;
+    document.querySelectorAll('[data-keep]').forEach(function (dice) {
+        dice.dataset.keep = 0;
+    });
     cleanButton();
-    document.getElementById("roll").disabled=false;
+    document.getElementById("roll").disabled = false;
+}
+function keepdice(item) {
+    var kept = item.dataset.keep;
+    if (kept == "0") {
+        kept = "1";
+    } else {
+        kept = "0";
+    }
+    item.dataset.keep = kept;
 }
 function roll() {
 
@@ -21,19 +69,18 @@ function roll() {
         turns -= 1;
         document.getElementById("turns").innerText = turns;
 
-        var dice1 = getRndInteger(1, 6);
-        var dice2 = getRndInteger(1, 6);
-        var dice3 = getRndInteger(1, 6);
-        var dice4 = getRndInteger(1, 6);
-        var dice5 = getRndInteger(1, 6);
 
-        document.getElementById("dice1").innerText = dice1;
-        document.getElementById("dice2").innerText = dice2;
-        document.getElementById("dice3").innerText = dice3;
-        document.getElementById("dice4").innerText = dice4;
-        document.getElementById("dice5").innerText = dice5;
-        var dices = [dice1, dice2, dice3, dice4, dice5];
-        dices.sort()
+        var i = 0;
+        document.querySelectorAll("[data-keep]").forEach(function (item) {
+            var kept = item.dataset.keep;
+            if (kept == "0") {
+                dices[i] = getRndInteger(1, 6);
+                document.getElementById(item.id).innerText = dices[i];
+            }
+            i++;
+        });
+
+
         rollcalculate(dices)
 
 
@@ -47,6 +94,7 @@ function roll() {
 
 }
 function cleanButton() {
+
     document.querySelectorAll('[data-point="1"]').forEach(function (item) {
 
         if (item.dataset.saved == "0") {
@@ -93,47 +141,65 @@ function rollcalculate(dices) {
     }
     //three of a kind
     if (numberOf1 >= 3 || numberOf2 >= 3 || numberOf3 >= 3 || numberOf4 >= 3 || numberOf5 >= 3 || numberOf6 >= 3) {
-        if(document.getElementById("btn3kind").dataset.saved==0){
+        if (document.getElementById("btn3kind").dataset.saved == 0) {
 
             document.getElementById("btn3kind").innerText = dices.reduce((partialSum, a) => partialSum + a, 0);
         }
     }
     //four of a kind
     if (numberOf1 >= 4 || numberOf2 >= 4 || numberOf3 >= 4 || numberOf4 >= 4 || numberOf5 >= 3 || numberOf6 >= 4) {
-        if(document.getElementById("btn4kind").dataset.saved==0){
+        if (document.getElementById("btn4kind").dataset.saved == 0) {
 
             document.getElementById("btn4kind").innerText = dices.reduce((partialSum, a) => partialSum + a, 0);
         }
     }
     //yahtzee
     if (numberOf1 >= 5 || numberOf2 >= 5 || numberOf3 >= 5 || numberOf4 >= 5 || numberOf5 >= 5 || numberOf6 >= 5) {
-        if(document.getElementById("btny").dataset.saved==0){
+        if (document.getElementById("btny").dataset.saved == 0) {
 
-            
+
             document.getElementById("btny").innerText = 50;
+        } else {
+            document.getElementById("extra").value += 50;
         }
     }
     //fullhouse
-    if ((numberOf1 == 3 || numberOf2 == 3 || numberOf3 == 3 || numberOf4 == 3 || numberOf5 == 3 || numberOf6 == 3) && (numberOf1 == 2 || numberOf2 == 2 || numberOf3 == 2 || numberOf4 == 2 || numberOf5 == 2 || numberOf6 == 2)) {
-       if(document.getElementById("btnfh").dataset.saved==0){
+    if ((numberOf1 == 3
+        || numberOf2 == 3
+        || numberOf3 == 3
+        || numberOf4 == 3
+        || numberOf5 == 3
+        || numberOf6 == 3)
+        && (numberOf1 == 2
+            || numberOf2 == 2
+            || numberOf3 == 2
+            || numberOf4 == 2
+            || numberOf5 == 2
+            || numberOf6 == 2)) {
+        if (document.getElementById("btnfh").dataset.saved == 0) {
 
-           document.getElementById("btnfh").innerText = 25;
+            document.getElementById("btnfh").innerText = 25;
         }
     }
     //small street
-    if ((numberOf1 >= 1 && numberOf2 >= 1 && numberOf3 >= 1 && numberOf4 >= 1) || (numberOf2 >= 1 && numberOf3 >= 1 && numberOf4 >= 1 && numberOf5 >= 1) || (numberOf1 >= 3 && numberOf4 >= 1 && numberOf5 >= 1 && numberOf6 >= 1)) {
-       if(document.getElementById("btnss").dataset.saved==0){
+    if ((numberOf1 >= 1 && numberOf2 >= 1 && numberOf3 >= 1 && numberOf4 >= 1)
+        || (numberOf2 >= 1 && numberOf3 >= 1 && numberOf4 >= 1 && numberOf5 >= 1)
+        || (numberOf3 >= 1 && numberOf4 >= 1 && numberOf5 >= 1 && numberOf6 >= 1)) {
+        if (document.getElementById("btnss").dataset.saved == 0) {
 
-           document.getElementById("btnss").innerText = 30;
+            document.getElementById("btnss").innerText = 30;
         }
     }
-    if ((numberOf1 >= 1 && numberOf2 >= 1 && numberOf3 >= 1 && numberOf4 >= 1 && numberOf5 >= 1) || (numberOf2 >= 1 && numberOf3 >= 1 && numberOf4 >= 1 && numberOf5 >= 1 && numberOf6 >= 1)) {
-       if(document.getElementById("btnbs").dataset.saved==0){
+    //big street
+    if ((numberOf1 >= 1 && numberOf2 >= 1 && numberOf3 >= 1 && numberOf4 >= 1 && numberOf5 >= 1)
+        || (numberOf2 >= 1 && numberOf3 >= 1 && numberOf4 >= 1 && numberOf5 >= 1 && numberOf6 >= 1)) {
+        if (document.getElementById("btnbs").dataset.saved == 0) {
 
-           document.getElementById("btnbs").innerText = 40;
+            document.getElementById("btnbs").innerText = 40;
         }
     }
-    if(document.getElementById("btnc").dataset.saved==0){
+    //chance
+    if (document.getElementById("btnc").dataset.saved == 0) {
 
         document.getElementById("btnc").innerText = dices.reduce((partialSum, a) => partialSum + a, 0);
     }
