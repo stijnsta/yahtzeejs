@@ -147,7 +147,7 @@ function rollcalculate(dices) {
         }
     }
     //four of a kind
-    if (numberOf1 >= 4 || numberOf2 >= 4 || numberOf3 >= 4 || numberOf4 >= 4 || numberOf5 >= 3 || numberOf6 >= 4) {
+    if (numberOf1 >= 4 || numberOf2 >= 4 || numberOf3 >= 4 || numberOf4 >= 4 || numberOf5 >= 4 || numberOf6 >= 4) {
         if (document.getElementById("btn4kind").dataset.saved == 0) {
 
             document.getElementById("btn4kind").innerText = dices.reduce((partialSum, a) => partialSum + a, 0);
