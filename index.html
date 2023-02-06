@@ -1,189 +1,174 @@
 <html>
 
 <head>
-    <script src="y.js"></script>
-    <link rel="stylesheet" href="y.css" />
+    <script src="js/y.js"></script>
+    <link rel="stylesheet" href="css/y.css" />
 </head>
 
 <body>
-    <div>
-        <div>Score</div>
-        <div><span id="lblpoints" class="total overall">0</span> punten</div>
-        <table>
-            <tr>
-                <th colspan="2">Boven</th>
-                <th colspan="2">Onder</th>
-            </tr>
-            <tr>
-                <td>
-                    <span>1</span>
-                </td>
-                <td>
-                    <button class="btn points" data-top="1" id="btn1" data-saved="0" data-point="1"
-                        onclick="save(this)">0</button>
-                </td>
-                <td>
-                    <span>3ofakind</span>
-                </td>
-                <td>
-                    <button class="btn points" data-top="0" id="btn3kind" data-saved="0" data-point="1"
-                        onclick="save(this)">0</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>2</span>
-                </td>
-                <td>
-                    <button class="btn points" data-top="1" id="btn2" data-saved="0" data-point="1"
-                        onclick="save(this)">0</button>
-                </td>
-                <td>
-                    <span>4ofakind</span>
-                </td>
-                <td>
-                    <button class="btn points" data-top="0" id="btn4kind" data-saved="0" data-point="1"
-                        onclick="save(this)">0</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                        <span>3</span>
-                </td>
-                <td>
-                        <button class="btn points" data-top="1" id="btn3" data-saved="0" data-point="1"
-                            onclick="save(this)">0</button>
-                </td>
-                <td>
-                   
-                        <span>fullhouse</span>
+    <div class="container">
+        <div class="game">
+            <span class="game__action-turnsleft">
+                <span id="turns">3</span>
+                <span >x</span>
+            </span>
+            <div class="game__score">
+                <span class="game__score-title">Score</span>
+                <span class="game__score-points">
+                    <span id="lblpoints" class="total overall">0</span>
+                </span>
+                <span class="game__score-title">punten</span>
+            </div>
+            <div class="game__table">
+                <table class="game__table-cont">
+                    <!-- <tr class="game__table-title">
+                        <th colspan="2">Boven</th>
+                        <th colspan="2">Onder</th>
+                    </tr> -->
+                    <tr class="game__table-row">
+                        <td  class="game__table-number">
+                            <span>1</span>
+                        </td>
+                        <td class="game__table-points">
+                            <button class="btn points" data-top="1" id="btn1" data-saved="0" data-point="1"
+                                onclick="save(this)">0</button>
+                        </td>
+                        <td class="game__table-type">
+                            <span>3ofakind</span>
+                        </td>
+                        <td class="game__table-score">
+                            <button class="btn points" data-top="0" id="btn3kind" data-saved="0" data-point="1"
+                                onclick="save(this)">0</button>
+                        </td>
+                    </tr>
+                    <tr class="game__table-row">
+                        <td  class="game__table-number">
+                            <span>2</span>
+                        </td>
+                        <td class="game__table-points">
+                            <button class="btn points" data-top="1" id="btn2" data-saved="0" data-point="1"
+                                onclick="save(this)">0</button>
+                        </td>
+                        <td class="game__table-type">
+                            <span>4ofakind</span>
+                        </td>
+                        <td class="game__table-score">
+                            <button class="btn points" data-top="0" id="btn4kind" data-saved="0" data-point="1"
+                                onclick="save(this)">0</button>
+                        </td>
+                    </tr>
+                    <tr class="game__table-row">
+                        <td  class="game__table-number">
+                            <span>3</span>
+                        </td>
+                        <td class="game__table-points">
+                            <button class="btn points" data-top="1" id="btn3" data-saved="0" data-point="1"
+                                    onclick="save(this)">0</button>
+                        </td>
+                        <td class="game__table-type">
+                            <span>fullhouse</span>
+                        </td>
+                        <td class="game__table-score">
+                            <button class="btn points" data-top="0" id="btnfh" data-saved="0" data-point="1"
+                                    onclick="save(this)">0</button>
+                        </td>
+                    </tr>
+                    <tr class="game__table-row">
+                        <td  class="game__table-number">
+                            <span>4</span>
+                        </td>
+                        <td class="game__table-points">
+                            <button class="btn points" data-top="1" id="btn4" data-saved="0" data-point="1"
+                                    onclick="save(this)">0</button>
+                        </td>
+                        <td class="game__table-type">
+                            <span>kleinestraat</span>
+                        </td>
+                        <td class="game__table-score">
+                            <button class="btn points" data-top="0" id="btnss" data-saved="0" data-point="1"
+                                    onclick="save(this)">0</button>
+                        </td>
+                    </tr>
+                    <tr class="game__table-row">
+                        <td  class="game__table-number">
+                            <span>5</span>
+                        </td>
+                        <td class="game__table-points">
+                            <button class="btn points" data-top="1" id="btn5" data-saved="0" data-point="1"
+                                    onclick="save(this)">0</button>
+                        </td>
+                        <td class="game__table-type">
+                            <span>grotestraat</span>
                         </td>
                         <td>
-                        <button class="btn points" data-top="0" id="btnfh" data-saved="0" data-point="1"
-                            onclick="save(this)">0</button>
-
-                
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                 
-                        <span>4</span>
+                            <button class="btn points" data-top="0" id="btnbs" data-saved="0" data-point="1"
+                                    onclick="save(this)">0</button>
                         </td>
-                        <td>
-                        <button class="btn points" data-top="1" id="btn4" data-saved="0" data-point="1"
-                            onclick="save(this)">0</button>
-                 
-                </td>
-                <td>
-                
-                        <span>kleinestraat</span>
+                    </tr>
+                    <tr class="game__table-row">
+                        <td class="game__table-number">
+                            <span>6</span>
                         </td>
-                        <td>
-                        <button class="btn points" data-top="0" id="btnss" data-saved="0" data-point="1"
-                            onclick="save(this)">0</button>
-                 
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                
-                        <span>5</span>
-                        </td>
-                        <td>
-                        <button class="btn points" data-top="1" id="btn5" data-saved="0" data-point="1"
-                            onclick="save(this)">0</button>
-                
-                </td>
-                <td>
-                
-                        <span>grotestraat</span>
-
-                        </td>
-                        <td>
-                        <button class="btn points" data-top="0" id="btnbs" data-saved="0" data-point="1"
-                            onclick="save(this)">0</button>
-                 
-                </td>
-            </tr>
-            <tr>
-                <td>
-             
-                        <span>6</span>
-                        </td>
-                        <td>
+                        <td class="game__table-points">
                         <button class="btn points" data-top="1" id="btn6" data-saved="0" data-point="1"
-                            onclick="save(this)">0</button>
-                 
+                                    onclick="save(this)">0</button>
+                        </td>
+                        <td class="game__table-type">
+                            <span>yahtzee</span>
+                        </td>
+                        <td class="game__table-score">
+                            <button class="btn points yahtzee" data-top="0" id="btny" data-saved="0" data-point="1"
+                                    onclick="save(this)">0</button>
+                            <span class="extra hidden"></span>
+                            <input type="hidden" id="extra" value="0">
+                        </td>
+                    </tr>
+                    <tr class="game__table-bonus">
+                        <td>
+                            <span>bonus</span>
+                        </td>
+                        <td>
+                            <span class="total bonus" id="lblbonus">0</span>
+                        </td>
+                        <td class="game__table-type">
+                            <span>chance</span>
+                        </td>
+                        <td>
+                            <button class="btn points" id="btnc" data-saved="0" data-point="1"
+                                    onclick="save(this)">0</button>
+                        </td>
+                    </tr>
+                    <tr class="game__table-total">
+                        <td>
+                            <span>totaal</span>
+                        </td>
+                        <td>
+                            <span class="total top" id="lbltotalu">0</span>
+                        </td>
+                        <td  class="game__table-type">
+                            <span>totaal</span>
+                        </td>
+                        <td>
+                            <span class="total bottom" id="lbltotall">0</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="game__dice">
+                <ul>
+                    <span class="dice btn" data-keep="0" id="dice1" onclick="keepdice(this)"><span>0</span></span>
+                    <span class="dice btn" data-keep="0" id="dice2" onclick="keepdice(this)"><span>0</span></span>
+                    <span class="dice btn" data-keep="0" id="dice3" onclick="keepdice(this)"><span>0</span></span>
+                    <span class="dice btn" data-keep="0" id="dice4" onclick="keepdice(this)"><span>0</span></span>
+                    <span class="dice btn" data-keep="0" id="dice5" onclick="keepdice(this)"><span>0</span></span>
+                </ul>
 
-                </td>
-                <td>
-               
-                        <span>yahtzee</span>
-                        </td>
-                        <td>
-                        <button class="btn points yahtzee" data-top="0" id="btny" data-saved="0" data-point="1"
-                            onclick="save(this)">0</button>
-                        <span class="extra hidden"></span>
-                        <input type="hidden" id="extra" value="0">
-               
-                </td>
-            </tr>
-            <tr>
-                <td>
-               
-                        <span>bonus</span>
-                        </td><td>
-                        <span class="total bonus" id="lblbonus">0</span>
-                
-
-                </td>
-                <td>
-               
-                        <span>chance</span>
-                        </td>
-                        <td>
-                        <button class="btn points" id="btnc" data-saved="0" data-point="1"
-                            onclick="save(this)">0</button>
-                
-                </td>
-            </tr>
-            <tr>
-                <td>
-                
-                        <span>totaal</span>
-                        </td>
-                        <td>
-                        <span class="total top" id="lbltotalu">0</span>
-                 
-                </td>
-           
-                <td>
-                        <span>totaal</span>
-                        </td>
-                        <td>
-                        <span class="total bottom" id="lbltotall">0</span>
-                  
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div>
-        <ul>
-            <li class="dice" data-keep="0" id="dice1" onclick="keepdice(this)">0</li>
-            <li class="dice" data-keep="0" id="dice2" onclick="keepdice(this)">0</li>
-            <li class="dice" data-keep="0" id="dice3" onclick="keepdice(this)">0</li>
-            <li class="dice" data-keep="0" id="dice4" onclick="keepdice(this)">0</li>
-            <li class="dice" data-keep="0" id="dice5" onclick="keepdice(this)">0</li>
-        </ul>
-
-    </div>
-    <div>
-        <span class="turnsleft" id="turns">3</span>
-        <button id="roll" onclick="roll()" class="btn roll">Rollen</button>
-        <button id="restart" onclick="restart()" class="btn restart">Herstarten</button>
+            </div>
+            <div class="game__action">
+                <button id="roll" onclick="roll()" class="btn2 roll">🎲 Rollen</button>
+                <button id="restart" onclick="restart()" class="btn2 restart"> ❌ Herstarten</button>
+            </div>
+        </div>
     </div>
 </body>
 

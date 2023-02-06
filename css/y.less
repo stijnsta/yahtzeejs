@@ -1,0 +1,171 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-image: url(../images/felt.jpg);
+}
+
+.container{
+    margin: 2em auto;
+    max-width: 100%;
+    @media (min-width: 768px) {
+        max-width: 60%;
+    }
+}
+
+
+.game{
+    background-color: white;
+    border-radius: 30px;
+    position: relative;
+    z-index: 1;
+    // score
+    &__score{
+        padding:1em 2em;
+        text-align: center;
+        &-title{
+            font-size: 1.75em;
+        }
+        &-points{
+            font-size: 3em;
+        }
+    }
+    // table
+    &__table{
+        padding:1em 2em;
+        &-number,
+        &-points,
+        &-type,
+        &-score{
+            border-bottom: 1px dotted gray;
+        }
+        &-cont{
+            width: 100%;
+        }
+        &-number{
+            width: 80px;
+            text-align: center;
+        }
+        &-points{
+        }
+        &-total{
+            td{
+                height: 60px;
+            }
+            .total{
+                &.bottom{
+                    font-size: 30px;
+                    color: black;
+                    text-align:center;
+                    padding:10px 15px;
+                    border-radius: 5px;
+                    width: 50px;
+                    display: block;
+                }
+            }
+        }
+    }
+    // dice
+    &__dice{
+        padding:1em 2em;
+        ul{
+            list-style-type: none;
+            padding:0;
+            display: flex;
+            justify-content: center;
+            > span{
+                margin: 0 0.25em;
+            }
+        }
+    }
+    // action
+    &__action{
+        padding:1em 2em;
+        display: flex;
+        justify-content: space-evenly;
+        .btn2{
+            font-size: 20px;
+            color: black;
+            background-color: #f8f8f8;
+            border:1px solid #ececec;
+            text-align:center;
+            padding:10px 15px;
+            border-radius: 5px;
+            &:hover,
+            &:focus{
+                cursor: pointer;
+                color: #005724;
+                background-color:#addbc0;
+                border:1px solid #02943f;
+            }
+            &.roll{
+                color: black;
+                background-color: #c9dbec;
+                border:1px solid #93bce2;
+                &:hover,
+                &:focus{
+                    cursor: pointer;
+                    color: #ffffff;
+                    background-color:#105ba0;
+                    border:1px solid #105ba0;
+                }
+            }
+            &.restart{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                &:hover,
+                &:focus{
+                    cursor: pointer;
+                    color: #db0f0f;
+                    background-color:#f8d7d7;
+                    border:1px solid #db0f0f;
+                }
+            }
+        }
+        &-turnsleft{
+            position: absolute;
+            z-index: 2;
+            top: -0.5em;
+            left: -0.5em;
+            font-size: 30px;
+            color: white;
+            background-color: #eb670f;
+            border:1px solid #eb670f;
+            text-align:center;
+            padding:15px;
+            border-radius: 100px;
+            display: flex;
+        }
+    }
+    .btn{
+        font-size: 30px;
+        color: black;
+        background-color: #f8f8f8;
+        border:1px solid #ececec;
+        text-align:center;
+        padding:10px 15px;
+        border-radius: 5px;
+        &:hover,
+        &:focus{
+            cursor: pointer;
+            color: #005724;
+            background-color:#addbc0;
+            border:1px solid #02943f;
+        }
+        &.points{
+            width: 80px;
+        }
+    }
+
+}
+
+
+
+
+
+
+.dice[data-keep="1"]{
+    border: 1px solid limegreen;
+    background-color: lightgreen;
+}
+
