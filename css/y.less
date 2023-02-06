@@ -8,7 +8,7 @@ body{
     margin: 2em auto;
     max-width: 100%;
     @media (min-width: 768px) {
-        max-width: 60%;
+        max-width: 768px;
     }
 }
 
@@ -155,6 +155,11 @@ body{
         &.points{
             width: 80px;
         }
+        &[data-saved="1"]{
+            border: 1px solid limegreen;
+            background-color: lightgreen;
+            cursor: not-allowed;
+        }
     }
 
 }
@@ -165,6 +170,12 @@ body{
 
 
 .dice[data-keep="1"]{
+    border: 1px solid limegreen;
+    background-color: lightgreen;
+}
+
+
+.dice[data-saved="1"]{
     border: 1px solid limegreen;
     background-color: lightgreen;
 }
