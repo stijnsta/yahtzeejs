@@ -3,6 +3,10 @@
 <head>
     <script src="js/y.js"></script>
     <link rel="stylesheet" href="css/y.css" />
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+   
+      <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
 
 <body>
@@ -34,7 +38,7 @@
                                 onclick="save(this)">0</button>
                         </td>
                         <td class="game__table-type">
-                            <span>3ofakind</span>
+                            <span>3 dezelfde</span>
                         </td>
                         <td class="game__table-score">
                             <button class="btn points" data-top="0" id="btn3kind" data-saved="0" data-point="1"
@@ -50,7 +54,7 @@
                                 onclick="save(this)">0</button>
                         </td>
                         <td class="game__table-type">
-                            <span>4ofakind</span>
+                            <span>4 dezelfde</span>
                         </td>
                         <td class="game__table-score">
                             <button class="btn points" data-top="0" id="btn4kind" data-saved="0" data-point="1"
@@ -66,7 +70,7 @@
                                     onclick="save(this)">0</button>
                         </td>
                         <td class="game__table-type">
-                            <span>fullhouse</span>
+                            <span>2 + 3 dezelfde</span>
                         </td>
                         <td class="game__table-score">
                             <button class="btn points" data-top="0" id="btnfh" data-saved="0" data-point="1"
@@ -82,7 +86,7 @@
                                     onclick="save(this)">0</button>
                         </td>
                         <td class="game__table-type">
-                            <span>kleinestraat</span>
+                            <span>4 opeenvolgend</span>
                         </td>
                         <td class="game__table-score">
                             <button class="btn points" data-top="0" id="btnss" data-saved="0" data-point="1"
@@ -98,7 +102,7 @@
                                     onclick="save(this)">0</button>
                         </td>
                         <td class="game__table-type">
-                            <span>grotestraat</span>
+                            <span>5 opeenvolgend</span>
                         </td>
                         <td>
                             <button class="btn points" data-top="0" id="btnbs" data-saved="0" data-point="1"
@@ -114,12 +118,12 @@
                                     onclick="save(this)">0</button>
                         </td>
                         <td class="game__table-type">
-                            <span>yahtzee</span>
+                            <span>5 dezelfde (yahtzee)</span>
                         </td>
                         <td class="game__table-score">
                             <button class="btn points yahtzee" data-top="0" id="btny" data-saved="0" data-point="1"
                                     onclick="save(this)">0</button>
-                            <span class="extra hidden"></span>
+                            <span class="extra hidden" id="lblextra"></span>
                             <input type="hidden" id="extra" value="0">
                         </td>
                     </tr>

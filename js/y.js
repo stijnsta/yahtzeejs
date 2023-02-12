@@ -16,6 +16,8 @@ function restart() {
     document.getElementById("lbltotalu").innerText = 0;
     document.getElementById("lbltotall").innerText = 0;
     document.getElementById("lblpoints").innerText = 0;
+    document.getElementById("lblextra").innerText = document.getElementById("extra").value;
+    document.getElementById("lblextra").classList.add("hidden");
     resetRoll();
 
 }
@@ -160,7 +162,9 @@ function rollcalculate(dices) {
 
             document.getElementById("btny").innerText = 50;
         } else {
-            document.getElementById("extra").value += 50;
+            document.getElementById("extra").value = parseInt(document.getElementById("extra").value) +  parseInt(50);
+            document.getElementById("lblextra").innerText = document.getElementById("extra").value;
+            document.getElementById("lblextra").classList.remove("hidden");
         }
     }
     //fullhouse
